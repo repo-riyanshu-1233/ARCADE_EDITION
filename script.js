@@ -9,19 +9,19 @@ const gamesList = [
   },
   {
     id: 2,
-    title: "GALACTIC RUN",
-    category: "ARCADE",
-    description: "High-speed retro runner game set in space. Dodge obstacles and beat the highest score!",
-    image: "images/.jpg",
-    gameUrl: "https://example.com/your-game-2"
+    title: "TICK TACK TOE",
+    category: "STRATEGY",
+    description: "TICK TACK TOE GAME KNOWN AS POPULAR GAME WORLDWIDE PLAYED BY STUDENT, CHILDREN AND ADULTS NOW IT'S AVAILABLE IN YOUR HAND. ENJOY!",
+    image: "images/comingsoon.jpg",
+    gameUrl: "null"
   },
   {
     id: 3,
-    title: "CYBER SHOOTER",
-    category: "SHOOTER",
-    description: "Classic arcade space shooter with retro visuals and intense boss battles.",
-    image: "https://via.placeholder.com/300x180/0d0d12/ff0055?text=CYBER+SHOOTER",
-    gameUrl: "https://example.com/your-game-3"
+    title: "COMINGSOON",
+    category: "N/A",
+    description: "N/A.",
+    image: "Images/comingsoon.jpg",
+    gameUrl: "null"
   }
 ];
 
