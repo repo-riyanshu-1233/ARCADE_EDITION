@@ -6,7 +6,6 @@
   <title>ARCADE EDITION</title>
   
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -58,14 +57,33 @@
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal('aboutModal')">X</span>
       <div class="custom-modal-layout">
-        </div>
         <div class="custom-modal-details">
           <h2>ABOUT ME</h2>
           <p>Welcome to Arcade edition design by riyanshu sinh. you can play all of my developed games at one place hope you enjoy and share my game to other and donate as your wish</p>
           <div class="preview-actions">
             <button class="btn btn-secondary" onclick="closeModal('aboutModal')">BACK</button>
-            <a href="https://example.com/donate" target="_blank" class="btn">DONATE</a>
+            <button class="btn" onclick="openDonateModal()">DONATE</button>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="donateModal" class="modal">
+    <div class="modal-content donate-modal-content">
+      <span class="close-btn" onclick="closeModal('donateModal')">X</span>
+      <div class="donate-container">
+        <h2>SUPPORT ME</h2>
+        <p>Scan QR code to support!</p>
+        
+        <div class="qr-box">
+          <img src="https://via.placeholder.com/200x200/1a1a24/00e5ff?text=YOUR+QR+CODE" alt="Payment QR Code" id="qrCodeImg">
+        </div>
+
+        <p class="upi-id">UPI: <span>your-upi-id@upi</span></p>
+
+        <div class="preview-actions" style="justify-content: center; margin-top: 15px;">
+          <button class="btn btn-secondary" onclick="backToAbout()">BACK</button>
         </div>
       </div>
     </div>
