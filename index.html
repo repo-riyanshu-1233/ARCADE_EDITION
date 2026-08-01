@@ -3,42 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ULTRA RETRO ARCADE 3000</title>
+  <title>ARCADE EDITION</title>
   
-  <!-- Google Font: Press Start 2P (Pixel Font) -->
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   
-  <!-- External CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navbar -->
   <header class="navbar">
-    <div class="logo rgb-text">RETRO ARCADE</div>
+    <div class="logo rgb-text">ARCADE EDITION</div>
     <nav>
       <a href="javascript:void(0)" onclick="openModal('aboutModal')">ABOUT</a>
       <a href="javascript:void(0)" onclick="openModal('helpModal')">HELP</a>
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero reveal">
     <div class="hero-content">
-      <h1>SELECT YOUR PLAYER</h1>
-      <p>100% PURE NOSTALGIA. NO DOWNLOADS. JUST PLAY.</p>
+      <h1>GAMING ARCADE</h1>
+      <p>PLAY EVRY GAME AT ONE PLACE.</p>
       <button class="btn" id="shareBtn" onclick="shareGame()">SHARE GAME</button>
     </div>
   </section>
 
-  <!-- Game Collection Grid -->
   <main class="container" id="games">
     <h2 class="reveal">ARCADE GAMES</h2>
-    <!-- Dynamic Cards will be rendered here from script.js -->
     <div class="game-grid" id="gameGrid"></div>
   </main>
 
-  <!-- Game Details Modal -->
   <div id="gameModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal('gameModal')">X</span>
@@ -61,17 +54,14 @@
     </div>
   </div>
 
-  <!-- ABOUT ME MODAL -->
   <div id="aboutModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal('aboutModal')">X</span>
       <div class="custom-modal-layout">
-        <div class="profile-pic-container">
-          <img src="https://via.placeholder.com/150" alt="Developer Profile" class="profile-pic">
         </div>
         <div class="custom-modal-details">
           <h2>ABOUT ME</h2>
-          <p>Welcome to Retro Arcade! Main yahan classic arcade-style web games design aur develop karta hoon. Enjoy playing!</p>
+          <p>Welcome to Arcade edition design by riyanshu sinh. you can play all of my developed games at one place hope you enjoy and share my game to other and donate as your wish</p>
           <div class="preview-actions">
             <button class="btn btn-secondary" onclick="closeModal('aboutModal')">BACK</button>
             <a href="https://example.com/donate" target="_blank" class="btn">DONATE</a>
@@ -81,16 +71,15 @@
     </div>
   </div>
 
-  <!-- HELP MODAL -->
   <div id="helpModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeModal('helpModal')">X</span>
       <div class="custom-modal-details">
         <h2>NEED HELP?</h2>
-        <p>Kisi bhi issue ya support ke liye humse contact karein:</p>
+        <p>For any type of assistance or idea for a game please contact us</p>
         <div class="contact-info">
-          <p><strong>EMAIL:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-          <p><strong>INSTAGRAM:</strong> <a href="https://instagram.com/yourhandle" target="_blank">@yourhandle</a></p>
+          <p><strong>EMAIL:</strong> <a href="mailto: riyanshusinh@gmail.com ">riyanshusinh@gmail.com</a></p>
+          <p><strong>INSTAGRAM:</strong> <a href="https://instagram.com/riyanshu1233" target="_blank">@riyanshu1233</a></p>
         </div>
         <div class="preview-actions" style="margin-top: 20px;">
           <button class="btn btn-secondary" onclick="closeModal('helpModal')">BACK</button>
@@ -99,7 +88,6 @@
     </div>
   </div>
 
-  <!-- External JS -->
   <script src="script.js"></script>
 </body>
 </html>
