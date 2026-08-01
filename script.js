@@ -5,7 +5,7 @@ const gamesList = [
     title: "BLOCKADE X",
     category: "strategy",
     description: "strategy board game for 2 player and single player.block your opponent path and be the first to win.",
-    image: "https://via.placeholder.com/300x180/0d0d12/00e5ff?text=PIXEL+PHYSICS",
+    image: "images/blockade.png",
     gameUrl: "https://blockade-x.onrender.com/"
   },
   {
@@ -13,7 +13,7 @@ const gamesList = [
     title: "GALACTIC RUN",
     category: "ARCADE",
     description: "High-speed retro runner game set in space. Dodge obstacles and beat the highest score!",
-    image: "https://via.placeholder.com/300x180/0d0d12/ffcc00?text=GALACTIC+RUN",
+    image: "images/.jpg",
     gameUrl: "https://example.com/your-game-2"
   },
   {
