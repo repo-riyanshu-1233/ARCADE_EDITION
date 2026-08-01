@@ -7,13 +7,13 @@
 }
 
 body {
-  background-color: #05050a;
-  color: #fff;
+  background-color: #0d0d12;
+  color: #e0e0e0;
   overflow-x: hidden;
   position: relative;
 }
 
-/* --- CRT Scanlines Effect --- */
+/* --- Subtle Scanlines (Reduced Intensity) --- */
 body::before {
   content: "";
   position: fixed;
@@ -23,46 +23,12 @@ body::before {
   height: 100vh;
   background: linear-gradient(
     rgba(18, 16, 16, 0) 50%,
-    rgba(0, 0, 0, 0.25) 50%
+    rgba(0, 0, 0, 0.15) 50%
   );
   background-size: 100% 4px;
   z-index: 10;
   pointer-events: none;
-  opacity: 0.3;
-}
-
-/* --- Keyframe Animations --- */
-@keyframes signboardGlow {
-  0% {
-    color: #ff00de;
-    text-shadow: 0 0 5px #fff, 0 0 10px #ff00de, 0 0 20px #ff00de, 0 0 40px #ff00de;
-  }
-  25% {
-    color: #00f2fe;
-    text-shadow: 0 0 5px #fff, 0 0 10px #00f2fe, 0 0 20px #00f2fe, 0 0 40px #00f2fe;
-  }
-  50% {
-    color: #ffe600;
-    text-shadow: 0 0 5px #fff, 0 0 10px #ffe600, 0 0 20px #ffe600, 0 0 40px #ffe600;
-  }
-  75% {
-    color: #00ff66;
-    text-shadow: 0 0 5px #fff, 0 0 10px #00ff66, 0 0 20px #00ff66, 0 0 40px #00ff66;
-  }
-  100% {
-    color: #ff00de;
-    text-shadow: 0 0 5px #fff, 0 0 10px #ff00de, 0 0 20px #ff00de, 0 0 40px #ff00de;
-  }
-}
-
-@keyframes BorderGlow {
-  0%, 100% { box-shadow: 0 0 5px #00f2fe; }
-  50% { box-shadow: 0 0 15px #00f2fe, 0 0 25px #4facfe; }
-}
-
-@keyframes shineEffect {
-  0% { left: -100%; }
-  100% { left: 200%; }
+  opacity: 0.15;
 }
 
 /* --- Header / Navbar --- */
@@ -70,55 +36,47 @@ body::before {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.5rem 5%;
-  background: #111;
-  border-bottom: 4px solid #333;
+  padding: 1.2rem 5%;
+  background: #141419;
+  border-bottom: 2px solid #2a2a35;
 }
 
 .logo {
-  font-size: 1.2rem;
-  letter-spacing: -1px;
-  animation: signboardGlow 4s infinite linear;
+  font-size: 1rem;
+  letter-spacing: -0.5px;
+  color: #00e5ff;
   padding: 5px;
 }
 
 .navbar nav a {
-  color: #ff00de;
+  color: #aaa;
   text-decoration: none;
   margin-left: 20px;
-  font-size: 0.7rem;
-  transition: 0.3s;
+  font-size: 0.65rem;
+  transition: color 0.2s;
 }
 
 .navbar nav a:hover {
-  color: #fff;
-  text-shadow: 0 0 5px #ff00de;
+  color: #00e5ff;
 }
 
 /* --- Hero Section --- */
 .hero {
   text-align: center;
-  padding: 80px 20px;
-  background: repeating-linear-gradient(
-    45deg,
-    #111,
-    #111 10px,
-    #0a0a14 10px,
-    #0a0a14 20px
-  );
-  border-bottom: 4px solid #ff00de;
+  padding: 60px 20px;
+  background: #111116;
+  border-bottom: 2px solid #2a2a35;
 }
 
 .hero h1 {
-  font-size: 1.8rem;
+  font-size: 1.5rem;
   margin-bottom: 20px;
-  color: #ffe600;
-  text-shadow: 2px 2px 0 #b3a100;
+  color: #ffcc00;
 }
 
 .hero p {
-  color: #4facfe;
-  font-size: 0.7rem;
+  color: #8a99ad;
+  font-size: 0.65rem;
   margin-bottom: 30px;
   line-height: 1.6;
 }
@@ -126,69 +84,43 @@ body::before {
 /* --- Buttons --- */
 .btn {
   display: inline-block;
-  padding: 15px 30px;
-  background-color: #111;
-  color: #ff00de;
+  padding: 12px 24px;
+  background-color: #1a1a24;
+  color: #00e5ff;
   text-decoration: none;
-  border: 4px solid #ff00de;
+  border: 2px solid #00e5ff;
   font-weight: bold;
-  font-size: 0.8rem;
-  transition: 0.2s;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 0 10px rgba(255, 0, 222, 0.3);
-}
-
-.btn::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 50%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.8),
-    transparent
-  );
-  transform: skewX(-20deg);
-}
-
-.btn.shine-active::before {
-  animation: shineEffect 0.6s ease-in-out;
+  font-size: 0.75rem;
+  transition: 0.2s ease;
+  cursor: pointer;
 }
 
 .btn:hover {
-  background-color: #ff00de;
-  color: #fff;
-  box-shadow: 0 0 25px #ff00de;
-  transform: scale(1.05);
+  background-color: #00e5ff;
+  color: #000;
 }
 
 .btn:active {
-  transform: scale(0.95);
+  transform: scale(0.96);
 }
 
 .btn-secondary {
-  background-color: #222;
-  color: #ffe600;
-  border: 4px solid #ffe600;
-  box-shadow: 0 0 10px rgba(255, 230, 0, 0.3);
+  background-color: #1a1a24;
+  color: #ffcc00;
+  border: 2px solid #ffcc00;
   margin-right: 15px;
 }
 
 .btn-secondary:hover {
-  background-color: #ffe600;
+  background-color: #ffcc00;
   color: #000;
-  box-shadow: 0 0 25px #ffe600;
 }
 
 /* --- Scroll Fade-In --- */
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .reveal.active {
@@ -198,50 +130,43 @@ body::before {
 
 /* --- Game Grid Section --- */
 .container {
-  padding: 50px 5%;
+  padding: 40px 5%;
   position: relative;
   z-index: 5;
 }
 
 .container h2 {
   text-align: center;
-  font-size: 1.2rem;
-  margin-bottom: 40px;
+  font-size: 1.1rem;
+  margin-bottom: 35px;
   color: #fff;
   text-transform: uppercase;
 }
 
-/* Side-by-Side Responsive Grid Box Layout */
 .game-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 30px;
+  gap: 25px;
 }
 
 /* --- Retro Game Card --- */
 .game-card {
-  background: #000;
-  border: 4px solid #333;
+  background: #141419;
+  border: 2px solid #2a2a35;
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.3s, border-color 0.3s;
+  transition: border-color 0.2s, transform 0.2s;
   position: relative;
-  image-rendering: pixelated;
 }
 
 .game-card:hover {
-  border-color: #00f2fe;
-  animation: BorderGlow 1.5s infinite;
-  transform: translateY(-8px);
+  border-color: #00e5ff;
+  transform: translateY(-4px);
 }
 
 .card-img {
   position: relative;
-  border-bottom: 4px solid #333;
-}
-
-.game-card:hover .card-img {
-  border-color: #00f2fe;
+  border-bottom: 2px solid #2a2a35;
 }
 
 .card-img img {
@@ -249,12 +174,6 @@ body::before {
   height: 180px;
   object-fit: cover;
   display: block;
-  filter: grayscale(40%);
-  transition: 0.3s;
-}
-
-.game-card:hover .card-img img {
-  filter: grayscale(0%);
 }
 
 .card-img::after {
@@ -263,11 +182,12 @@ body::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: #ffe600;
-  font-size: 0.8rem;
+  color: #ffcc00;
+  font-size: 0.75rem;
   opacity: 0;
-  transition: 0.3s;
-  text-shadow: 2px 2px 0 #000;
+  transition: opacity 0.2s;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 6px 10px;
 }
 
 .game-card:hover .card-img::after {
@@ -276,29 +196,24 @@ body::before {
 
 .card-info {
   padding: 15px;
-  background-color: #111;
+  background-color: #141419;
 }
 
 .card-info h3 {
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   color: #fff;
   margin-bottom: 8px;
 }
 
 .card-meta {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .tag {
-  color: #4facfe;
-  font-size: 0.5rem;
-}
-
-.score {
-  color: #ffe600;
-  font-size: 0.5rem;
+  color: #8a99ad;
+  font-size: 0.55rem;
 }
 
 /* --- Overlay Modals --- */
@@ -309,12 +224,12 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.95);
+  background: rgba(0, 0, 0, 0.85);
   z-index: 1000;
   justify-content: center;
   align-items: center;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.25s ease;
 }
 
 .modal.open {
@@ -325,13 +240,12 @@ body::before {
 .modal-content {
   position: relative;
   width: 90%;
-  max-width: 900px;
-  background: #000;
-  border: 4px solid #ff00de;
-  box-shadow: 0 0 30px #ff00de;
+  max-width: 800px;
+  background: #141419;
+  border: 2px solid #00e5ff;
   padding: 25px;
-  transform: scale(0.8);
-  transition: transform 0.3s ease;
+  transform: scale(0.9);
+  transition: transform 0.25s ease;
   color: #fff;
 }
 
@@ -339,7 +253,6 @@ body::before {
   transform: scale(1);
 }
 
-/* Game Preview Layout */
 .preview-layout {
   display: flex;
   flex-direction: column;
@@ -355,7 +268,7 @@ body::before {
 
 .preview-img-box {
   flex: 1;
-  border: 4px solid #333;
+  border: 2px solid #2a2a35;
   max-height: 250px;
   overflow: hidden;
 }
@@ -375,22 +288,19 @@ body::before {
 }
 
 .preview-details h2 {
-  color: #ffe600;
-  font-size: 1.3rem;
-  text-shadow: 2px 2px 0 #000;
+  color: #ffcc00;
+  font-size: 1.1rem;
 }
 
 .preview-details p {
-  color: #4facfe;
-  font-size: 0.7rem;
+  color: #aaa;
+  font-size: 0.65rem;
   line-height: 1.8;
 }
 
 .preview-meta {
-  font-size: 0.6rem;
-  color: #ff00de;
-  display: flex;
-  gap: 15px;
+  font-size: 0.55rem;
+  color: #00e5ff;
 }
 
 .preview-actions {
@@ -402,14 +312,14 @@ body::before {
 
 .close-btn {
   position: absolute;
-  top: -15px;
-  right: -15px;
-  font-size: 20px;
-  background: #000;
-  color: #ff00de;
-  border: 4px solid #ff00de;
-  width: 40px;
-  height: 40px;
+  top: -12px;
+  right: -12px;
+  font-size: 16px;
+  background: #141419;
+  color: #00e5ff;
+  border: 2px solid #00e5ff;
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -418,8 +328,8 @@ body::before {
 }
 
 .close-btn:hover {
-  background: #ff00de;
-  color: #fff;
+  background: #00e5ff;
+  color: #000;
 }
 
 /* Custom About & Help Modal Layouts */
@@ -444,9 +354,8 @@ body::before {
 .profile-pic {
   width: 120px;
   height: 120px;
-  border: 4px solid #ff00de;
+  border: 2px solid #00e5ff;
   object-fit: cover;
-  box-shadow: 0 0 10px #ff00de;
 }
 
 .custom-modal-details {
@@ -457,13 +366,12 @@ body::before {
 }
 
 .custom-modal-details h2 {
-  color: #ffe600;
-  font-size: 1.2rem;
-  text-shadow: 2px 2px 0 #000;
+  color: #ffcc00;
+  font-size: 1.1rem;
 }
 
 .custom-modal-details p {
-  color: #4facfe;
+  color: #aaa;
   font-size: 0.65rem;
   line-height: 1.8;
 }
@@ -481,19 +389,18 @@ body::before {
 }
 
 .contact-info a {
-  color: #00f2fe;
+  color: #00e5ff;
   text-decoration: none;
 }
 
 .contact-info a:hover {
   text-decoration: underline;
-  text-shadow: 0 0 5px #00f2fe;
 }
 
 @media (max-width: 600px) {
-  .hero h1 { font-size: 1.2rem; }
-  .hero p { font-size: 0.6rem; }
-  .logo { font-size: 0.9rem; }
-  .navbar nav a { font-size: 0.6rem; margin-left: 10px; }
+  .hero h1 { font-size: 1.1rem; }
+  .hero p { font-size: 0.55rem; }
+  .logo { font-size: 0.8rem; }
+  .navbar nav a { font-size: 0.55rem; margin-left: 10px; }
   .game-grid { grid-template-columns: 1fr; }
 }
