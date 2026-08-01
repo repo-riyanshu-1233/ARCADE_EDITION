@@ -5,7 +5,7 @@ const gamesList = [
     title: "BLOCKADE X",
     category: "strategy",
     description: "strategy board game for 2 player and single player.block your opponent path and be the first to win.",
-    image: "images/blockade.png",
+    image: "Images/blockade.png",
     gameUrl: "https://blockade-x.onrender.com/"
   },
   {
