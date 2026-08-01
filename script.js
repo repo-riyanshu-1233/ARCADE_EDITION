@@ -11,8 +11,8 @@ const gamesList = [
     id: 2,
     title: "TICK TACK TOE",
     category: "STRATEGY",
-    description: "TICK TACK TOE GAME KNOWN AS POPULAR GAME WORLDWIDE PLAYED BY STUDENT, CHILDREN AND ADULTS NOW IT'S AVAILABLE IN YOUR HAND. ENJOY!",
-    image: "images/comingsoon.jpg",
+    description: "TICK TACK TOE GAME KNOWN AS POPULAR GAME WORLDWIDE PLAYED BY STUDENT, CHILDREN AND ADULTS NOW IT'S AVAILABLE IN YOUR HAND. ENJOY!(Work in progress)",
+    image: "Images/comingsoon.jpg",
     gameUrl: "null"
   },
   {
