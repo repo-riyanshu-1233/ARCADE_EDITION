@@ -13,11 +13,12 @@
 </head>
 <body>
 
-  <!-- Navbar -->
+  <!-- Updated Navbar -->
   <header class="navbar">
     <div class="logo">RETRO ARCADE</div>
     <nav>
-      <a href="#">HOME</a>
+      <a href="javascript:void(0)" onclick="openModal('aboutModal')">ABOUT</a>
+      <a href="javascript:void(0)" onclick="openModal('helpModal')">HELP</a>
       <a href="#games">GAMES</a>
     </nav>
   </header>
@@ -31,7 +32,7 @@
     </div>
   </section>
 
-  <!-- Game Collection Grid (Box Layout Side-by-Side) -->
+  <!-- Game Collection Grid -->
   <main class="container" id="games">
     <h2 class="reveal">HIGH SCORES</h2>
     <div class="game-grid">
@@ -81,12 +82,10 @@
     </div>
   </main>
 
-  <!-- Game Modal (Contains About Section) -->
+  <!-- Game Details Modal -->
   <div id="gameModal" class="modal">
     <div class="modal-content">
       <span class="close-btn" onclick="closeGame()">X</span>
-      
-      <!-- Game About / Preview Drawer -->
       <div id="previewDrawer" class="preview-layout">
         <div class="preview-img-box">
           <img id="aboutImg" src="" alt="Game Preview">
@@ -104,7 +103,45 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
+  <!-- ABOUT ME MODAL -->
+  <div id="aboutModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('aboutModal')">X</span>
+      <div class="custom-modal-layout">
+        <div class="profile-pic-container">
+          <!-- Apni photo ka link yahan lagayein -->
+          <img src="https://via.placeholder.com/150" alt="Developer Profile" class="profile-pic">
+        </div>
+        <div class="custom-modal-details">
+          <h2>ABOUT ME</h2>
+          <p>Welcome to Retro Arcade! Main yahan classic arcade-style web games design aur develop karta hoon. Enjoy playing!</p>
+          <div class="preview-actions">
+            <button class="btn btn-secondary" onclick="closeModal('aboutModal')">BACK</button>
+            <a href="https://example.com/donate" target="_blank" class="btn">DONATE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HELP MODAL -->
+  <div id="helpModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('helpModal')">X</span>
+      <div class="custom-modal-details">
+        <h2>NEED HELP?</h2>
+        <p>Kisi bhi issue ya support ke liye humse contact karein:</p>
+        <div class="contact-info">
+          <p><strong>EMAIL:</strong> <a href="mailto:your-email@example.com">your-email@example.com</a></p>
+          <p><strong>INSTAGRAM:</strong> <a href="https://instagram.com/yourhandle" target="_blank">@yourhandle</a></p>
+        </div>
+        <div class="preview-actions" style="margin-top: 20px;">
+          <button class="btn btn-secondary" onclick="closeModal('helpModal')">BACK</button>
+        </div>
+      </div>
     </div>
   </div>
 
