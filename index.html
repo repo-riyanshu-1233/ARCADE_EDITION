@@ -19,7 +19,6 @@
     <nav>
       <a href="javascript:void(0)" onclick="openModal('aboutModal')">ABOUT</a>
       <a href="javascript:void(0)" onclick="openModal('helpModal')">HELP</a>
-      <a href="#games">GAMES</a>
     </nav>
   </header>
 
@@ -28,17 +27,17 @@
     <div class="hero-content">
       <h1>SELECT YOUR PLAYER</h1>
       <p>100% PURE NOSTALGIA. NO DOWNLOADS. JUST PLAY.</p>
-      <a href="#games" class="btn" id="shineBtn">START GAME</a>
+      <button class="btn" id="shareBtn" onclick="shareGame()">SHARE GAME</button>
     </div>
   </section>
 
   <!-- Game Collection Grid -->
   <main class="container" id="games">
-    <h2 class="reveal">HIGH SCORES</h2>
+    <h2 class="reveal">ARCADE GAMES</h2>
     <div class="game-grid">
 
       <!-- Game Card 1 -->
-      <div class="game-card reveal" onclick="showAbout('PIXEL PHYSICS', 'Action 8-bit physics simulation game where you solve challenging gravity puzzles.', 'https://via.placeholder.com/300x180/05050a/4facfe?text=PHYSICS+8BIT', 'https://example.com/your-game-1', '99990', 'ACTION')">
+      <div class="game-card reveal" onclick="showAbout('PIXEL PHYSICS', 'Action 8-bit physics simulation game where you solve challenging gravity puzzles.', 'https://via.placeholder.com/300x180/05050a/4facfe?text=PHYSICS+8BIT', 'https://example.com/your-game-1', 'ACTION')">
         <div class="card-img">
           <img src="https://via.placeholder.com/300x180/05050a/4facfe?text=PHYSICS+8BIT" alt="Game 1">
         </div>
@@ -46,13 +45,12 @@
           <h3>PIXEL PHYSICS</h3>
           <div class="card-meta">
             <span class="tag">[ACTION]</span>
-            <span class="score">HI-SCORE: 99990</span>
           </div>
         </div>
       </div>
 
       <!-- Game Card 2 -->
-      <div class="game-card reveal" onclick="showAbout('GALACTIC RUN', 'High-speed retro runner game set in space. Dodge obstacles and beat the highest score!', 'https://via.placeholder.com/300x180/05050a/ffe600?text=SPACE+RUN', 'https://example.com/your-game-2', '54300', 'ARCADE')">
+      <div class="game-card reveal" onclick="showAbout('GALACTIC RUN', 'High-speed retro runner game set in space. Dodge obstacles and play!', 'https://via.placeholder.com/300x180/05050a/ffe600?text=SPACE+RUN', 'https://example.com/your-game-2', 'ARCADE')">
         <div class="card-img">
           <img src="https://via.placeholder.com/300x180/05050a/ffe600?text=SPACE+RUN" alt="Game 2">
         </div>
@@ -60,13 +58,12 @@
           <h3>GALACTIC RUN</h3>
           <div class="card-meta">
             <span class="tag">[ARCADE]</span>
-            <span class="score">HI-SCORE: 54300</span>
           </div>
         </div>
       </div>
 
       <!-- Game Card 3 -->
-      <div class="game-card reveal" onclick="showAbout('CYBER SHOOTER', 'Classic arcade space shooter with neon visuals and intense boss battles.', 'https://via.placeholder.com/300x180/05050a/ff00de?text=RETRO+SHOOT', 'https://example.com/your-game-3', '72150', 'SHOOTER')">
+      <div class="game-card reveal" onclick="showAbout('CYBER SHOOTER', 'Classic arcade space shooter with retro visuals and intense boss battles.', 'https://via.placeholder.com/300x180/05050a/ff00de?text=RETRO+SHOOT', 'https://example.com/your-game-3', 'SHOOTER')">
         <div class="card-img">
           <img src="https://via.placeholder.com/300x180/05050a/ff00de?text=RETRO+SHOOT" alt="Game 3">
         </div>
@@ -74,7 +71,6 @@
           <h3>CYBER SHOOTER</h3>
           <div class="card-meta">
             <span class="tag">[SHOOTER]</span>
-            <span class="score">HI-SCORE: 72150</span>
           </div>
         </div>
       </div>
@@ -94,7 +90,6 @@
           <h2 id="aboutTitle">GAME TITLE</h2>
           <div class="preview-meta">
             <span id="aboutTag">[GENRE]</span>
-            <span id="aboutScore">HI-SCORE: 0000</span>
           </div>
           <p id="aboutDesc">Game description will appear here...</p>
           <div class="preview-actions">
@@ -112,7 +107,6 @@
       <span class="close-btn" onclick="closeModal('aboutModal')">X</span>
       <div class="custom-modal-layout">
         <div class="profile-pic-container">
-          <!-- Apni photo ka link yahan src me dalein -->
           <img src="https://via.placeholder.com/150" alt="Developer Profile" class="profile-pic">
         </div>
         <div class="custom-modal-details">
