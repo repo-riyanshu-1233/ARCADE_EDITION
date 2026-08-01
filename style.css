@@ -13,7 +13,7 @@ body {
   position: relative;
 }
 
-/* --- Subtle Scanlines (Reduced Intensity) --- */
+/* --- Subtle Scanlines Overlay --- */
 body::before {
   content: "";
   position: fixed;
@@ -41,11 +41,21 @@ body::before {
   border-bottom: 2px solid #2a2a35;
 }
 
-.logo {
+/* RGB Animated Text Effect for Header Logo */
+.rgb-text {
   font-size: 1rem;
   letter-spacing: -0.5px;
-  color: #00e5ff;
   padding: 5px;
+  background: linear-gradient(90deg, #ff0000, #ff7f00, #ffff00, #00ff00, #00ffff, #0000ff, #8b00ff, #ff0000);
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: rgbShift 6s linear infinite;
+}
+
+@keyframes rgbShift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 .navbar nav a {
@@ -186,7 +196,7 @@ body::before {
   font-size: 0.75rem;
   opacity: 0;
   transition: opacity 0.2s;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(0, 0, 0, 0.85);
   padding: 6px 10px;
 }
 
@@ -400,7 +410,6 @@ body::before {
 @media (max-width: 600px) {
   .hero h1 { font-size: 1.1rem; }
   .hero p { font-size: 0.55rem; }
-  .logo { font-size: 0.8rem; }
   .navbar nav a { font-size: 0.55rem; margin-left: 10px; }
   .game-grid { grid-template-columns: 1fr; }
 }
