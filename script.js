@@ -1,7 +1,24 @@
 // Variable to store selected game URL
 let currentActiveGameUrl = '';
 
-// --- 1. Show Game About Section ---
+// --- General Modal Controls ---
+function openModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.style.display = 'flex';
+    setTimeout(() => { modal.classList.add('open'); }, 10);
+  }
+}
+
+function closeModal(id) {
+  const modal = document.getElementById(id);
+  if (modal) {
+    modal.classList.remove('open');
+    setTimeout(() => { modal.style.display = 'none'; }, 300);
+  }
+}
+
+// --- Show Game Details ---
 function showAbout(title, desc, imgSrc, gameUrl, score, category) {
   document.getElementById('aboutTitle').innerText = title;
   document.getElementById('aboutDesc').innerText = desc;
@@ -11,32 +28,18 @@ function showAbout(title, desc, imgSrc, gameUrl, score, category) {
   
   currentActiveGameUrl = gameUrl;
 
-  // Open Modal
-  const modal = document.getElementById('gameModal');
-  modal.style.display = 'flex';
-  setTimeout(() => { modal.classList.add('open'); }, 10);
+  openModal('gameModal');
 }
 
-// --- 2. Redirect to Game Link in New Tab ---
+// --- Redirect to Game ---
 function launchGame() {
   if (currentActiveGameUrl) {
-    // Direct open game in new tab
     window.open(currentActiveGameUrl, '_blank');
-    // Close modal after clicking play
-    closeGame();
+    closeModal('gameModal');
   }
 }
 
-// --- 3. Close Modal ---
-function closeGame() {
-  const modal = document.getElementById('gameModal');
-  modal.classList.remove('open');
-  setTimeout(() => {
-    modal.style.display = 'none';
-  }, 300);
-}
-
-// --- 4. Button Shine Effect ---
+// --- Button Shine Effect ---
 const shineBtn = document.getElementById('shineBtn');
 if (shineBtn) {
   shineBtn.addEventListener('click', function() {
@@ -45,7 +48,7 @@ if (shineBtn) {
   });
 }
 
-// --- 5. Scroll Fade-In Observer ---
+// --- Scroll Fade-In Observer ---
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
@@ -56,17 +59,20 @@ const observer = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.reveal').forEach(el => { observer.observe(el); });
 
-// Modal Outer Click & Keyboard Close
+// Close modal on outer click & Escape key
 window.onclick = function(event) {
-  const modal = document.getElementById('gameModal');
-  if (event.target == modal) { closeGame(); }
+  if (event.target.classList.contains('modal')) {
+    closeModal(event.target.id);
+  }
 }
 
 window.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') { closeGame(); }
+  if (e.key === 'Escape') { 
+    document.querySelectorAll('.modal').forEach(m => closeModal(m.id));
+  }
 });
 
-// --- 6. Dynamic Pixel Stars Background Animation ---
+// --- Dynamic Pixel Stars Animation ---
 function createPixelStars() {
   const container = document.body;
   const starCount = 30;
@@ -83,7 +89,6 @@ function createPixelStars() {
     star.style.pointerEvents = 'none';
     star.style.zIndex = '1';
     
-    // Twinkle animation using JS interval
     setInterval(() => {
       star.style.opacity = Math.random() > 0.3 ? '1' : '0.2';
     }, 500 + Math.random() * 1000);
@@ -94,45 +99,66 @@ function createPixelStars() {
 
 createPixelStars();
 
-// --- 7. Custom Native Kitten Cursor ---
-const kittenCursor = document.createElement('div');
-kittenCursor.innerText = '🐱';
-kittenCursor.style.position = 'fixed';
-kittenCursor.style.fontSize = '24px';
-kittenCursor.style.pointerEvents = 'none';
-kittenCursor.style.zIndex = '99999';
-kittenCursor.style.transition = 'transform 0.1s ease-out, opacity 0.3s ease';
-kittenCursor.style.userSelect = 'none';
-kittenCursor.style.opacity = '0';
-document.body.appendChild(kittenCursor);
+// --- Desktop-Only Custom Arcade Cursor ---
+const isDesktop = window.matchMedia('(pointer: fine)').matches;
 
-let mouseX = 0, mouseY = 0;
-let kittenX = 0, kittenY = 0;
-let fadeTimeout;
+if (isDesktop) {
+  document.body.style.cursor = 'none';
 
-function updatePosition(x, y) {
-  mouseX = x + 12;
-  mouseY = y + 12;
-  kittenCursor.style.opacity = '1';
+  const cursorDot = document.createElement('div');
+  cursorDot.style.position = 'fixed';
+  cursorDot.style.width = '8px';
+  cursorDot.style.height = '8px';
+  cursorDot.style.backgroundColor = '#00f2fe';
+  cursorDot.style.boxShadow = '0 0 8px #00f2fe, 0 0 15px #ff00de';
+  cursorDot.style.borderRadius = '0px';
+  cursorDot.style.pointerEvents = 'none';
+  cursorDot.style.zIndex = '999999';
+  cursorDot.style.transform = 'translate(-50%, -50%)';
+  cursorDot.style.transition = 'transform 0.05s ease-out, background-color 0.2s';
+  document.body.appendChild(cursorDot);
 
-  clearTimeout(fadeTimeout);
-  fadeTimeout = setTimeout(() => { kittenCursor.style.opacity = '0'; }, 2000);
+  const cursorRing = document.createElement('div');
+  cursorRing.style.position = 'fixed';
+  cursorRing.style.width = '26px';
+  cursorRing.style.height = '26px';
+  cursorRing.style.border = '2px solid #ff00de';
+  cursorRing.style.boxShadow = '0 0 10px #ff00de';
+  cursorRing.style.pointerEvents = 'none';
+  cursorRing.style.zIndex = '999998';
+  cursorRing.style.transform = 'translate(-50%, -50%)';
+  document.body.appendChild(cursorRing);
+
+  let mouseX = 0, mouseY = 0;
+  let ringX = 0, ringY = 0;
+
+  window.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+
+    cursorDot.style.left = `${mouseX}px`;
+    cursorDot.style.top = `${mouseY}px`;
+  });
+
+  function animateCursor() {
+    ringX += (mouseX - ringX) * 0.2;
+    ringY += (mouseY - ringY) * 0.2;
+
+    cursorRing.style.left = `${ringX}px`;
+    cursorRing.style.top = `${ringY}px`;
+
+    requestAnimationFrame(animateCursor);
+  }
+
+  animateCursor();
+
+  window.addEventListener('mousedown', () => {
+    cursorDot.style.transform = 'translate(-50%, -50%) scale(1.6)';
+    cursorRing.style.transform = 'translate(-50%, -50%) scale(0.7)';
+  });
+
+  window.addEventListener('mouseup', () => {
+    cursorDot.style.transform = 'translate(-50%, -50%) scale(1)';
+    cursorRing.style.transform = 'translate(-50%, -50%) scale(1)';
+  });
 }
-
-window.addEventListener('mousemove', (e) => { updatePosition(e.clientX, e.clientY); });
-window.addEventListener('touchmove', (e) => {
-  if (e.touches.length > 0) { updatePosition(e.touches[0].clientX, e.touches[0].clientY); }
-}, { passive: true });
-window.addEventListener('touchstart', (e) => {
-  if (e.touches.length > 0) { updatePosition(e.touches[0].clientX, e.touches[0].clientY); }
-}, { passive: true });
-
-function animateKitten() {
-  kittenX += (mouseX - kittenX) * 0.15;
-  kittenY += (mouseY - kittenY) * 0.15;
-  kittenCursor.style.left = `${kittenX}px`;
-  kittenCursor.style.top = `${kittenY}px`;
-  requestAnimationFrame(animateKitten);
-}
-
-animateKitten();
