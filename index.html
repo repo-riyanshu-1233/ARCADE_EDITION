@@ -13,7 +13,7 @@
 </head>
 <body>
 
-  <!-- Updated Navbar -->
+  <!-- Navbar -->
   <header class="navbar">
     <div class="logo">RETRO ARCADE</div>
     <nav>
@@ -85,7 +85,7 @@
   <!-- Game Details Modal -->
   <div id="gameModal" class="modal">
     <div class="modal-content">
-      <span class="close-btn" onclick="closeGame()">X</span>
+      <span class="close-btn" onclick="closeModal('gameModal')">X</span>
       <div id="previewDrawer" class="preview-layout">
         <div class="preview-img-box">
           <img id="aboutImg" src="" alt="Game Preview">
@@ -98,7 +98,7 @@
           </div>
           <p id="aboutDesc">Game description will appear here...</p>
           <div class="preview-actions">
-            <button class="btn btn-secondary" onclick="closeGame()">BACK</button>
+            <button class="btn btn-secondary" onclick="closeModal('gameModal')">BACK</button>
             <button class="btn" id="startGameBtn" onclick="launchGame()">PLAY NOW</button>
           </div>
         </div>
@@ -112,7 +112,7 @@
       <span class="close-btn" onclick="closeModal('aboutModal')">X</span>
       <div class="custom-modal-layout">
         <div class="profile-pic-container">
-          <!-- Apni photo ka link yahan lagayein -->
+          <!-- Apni photo ka link yahan src me dalein -->
           <img src="https://via.placeholder.com/150" alt="Developer Profile" class="profile-pic">
         </div>
         <div class="custom-modal-details">
