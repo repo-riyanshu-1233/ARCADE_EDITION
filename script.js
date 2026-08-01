@@ -1,15 +1,12 @@
-// ==========================================
-// 🎮 GAMES CONFIGURATION (ADD NEW GAMES HERE)
-// Future me naya game add karne ke liye bas niche ek naya object add kar do!
-// ==========================================
+
 const gamesList = [
   {
     id: 1,
-    title: "PIXEL PHYSICS",
-    category: "ACTION",
-    description: "Action 8-bit physics simulation game where you solve challenging gravity puzzles.",
+    title: "BLOCKADE X",
+    category: "strategy",
+    description: "strategy board game for 2 player and single player.block your opponent path and be the first to win.",
     image: "https://via.placeholder.com/300x180/0d0d12/00e5ff?text=PIXEL+PHYSICS",
-    gameUrl: "https://example.com/your-game-1"
+    gameUrl: "https://blockade-x.onrender.com/"
   },
   {
     id: 2,
