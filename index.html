@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ULTRA RETRO ARCADE 3000</title>
+  
+  <!-- Google Font: Press Start 2P (Pixel Font) -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">RETRO ARCADE</div>
+    <nav>
+      <a href="#">HOME</a>
+      <a href="#games">GAMES</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero reveal">
+    <div class="hero-content">
+      <h1>SELECT YOUR PLAYER</h1>
+      <p>100% PURE NOSTALGIA. NO DOWNLOADS. JUST PLAY.</p>
+      <a href="#games" class="btn" id="shineBtn">START GAME</a>
+    </div>
+  </section>
+
+  <!-- Game Collection Grid (Box Layout Side-by-Side) -->
+  <main class="container" id="games">
+    <h2 class="reveal">HIGH SCORES</h2>
+    <div class="game-grid">
+
+      <!-- Game Card 1 -->
+      <div class="game-card reveal" onclick="showAbout('PIXEL PHYSICS', 'Action 8-bit physics simulation game where you solve challenging gravity puzzles.', 'https://via.placeholder.com/300x180/05050a/4facfe?text=PHYSICS+8BIT', 'https://example.com/your-game-1', '99990', 'ACTION')">
+        <div class="card-img">
+          <img src="https://via.placeholder.com/300x180/05050a/4facfe?text=PHYSICS+8BIT" alt="Game 1">
+        </div>
+        <div class="card-info">
+          <h3>PIXEL PHYSICS</h3>
+          <div class="card-meta">
+            <span class="tag">[ACTION]</span>
+            <span class="score">HI-SCORE: 99990</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Game Card 2 -->
+      <div class="game-card reveal" onclick="showAbout('GALACTIC RUN', 'High-speed retro runner game set in space. Dodge obstacles and beat the highest score!', 'https://via.placeholder.com/300x180/05050a/ffe600?text=SPACE+RUN', 'https://example.com/your-game-2', '54300', 'ARCADE')">
+        <div class="card-img">
+          <img src="https://via.placeholder.com/300x180/05050a/ffe600?text=SPACE+RUN" alt="Game 2">
+        </div>
+        <div class="card-info">
+          <h3>GALACTIC RUN</h3>
+          <div class="card-meta">
+            <span class="tag">[ARCADE]</span>
+            <span class="score">HI-SCORE: 54300</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Game Card 3 -->
+      <div class="game-card reveal" onclick="showAbout('CYBER SHOOTER', 'Classic arcade space shooter with neon visuals and intense boss battles.', 'https://via.placeholder.com/300x180/05050a/ff00de?text=RETRO+SHOOT', 'https://example.com/your-game-3', '72150', 'SHOOTER')">
+        <div class="card-img">
+          <img src="https://via.placeholder.com/300x180/05050a/ff00de?text=RETRO+SHOOT" alt="Game 3">
+        </div>
+        <div class="card-info">
+          <h3>CYBER SHOOTER</h3>
+          <div class="card-meta">
+            <span class="tag">[SHOOTER]</span>
+            <span class="score">HI-SCORE: 72150</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Game Modal (Contains About Section) -->
+  <div id="gameModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeGame()">X</span>
+      
+      <!-- Game About / Preview Drawer -->
+      <div id="previewDrawer" class="preview-layout">
+        <div class="preview-img-box">
+          <img id="aboutImg" src="" alt="Game Preview">
+        </div>
+        <div class="preview-details">
+          <h2 id="aboutTitle">GAME TITLE</h2>
+          <div class="preview-meta">
+            <span id="aboutTag">[GENRE]</span>
+            <span id="aboutScore">HI-SCORE: 0000</span>
+          </div>
+          <p id="aboutDesc">Game description will appear here...</p>
+          <div class="preview-actions">
+            <button class="btn btn-secondary" onclick="closeGame()">BACK</button>
+            <button class="btn" id="startGameBtn" onclick="launchGame()">PLAY NOW</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- External JS -->
+  <script src="script.js"></script>
+</body>
+</html>
