@@ -1,4 +1,3 @@
-/* --- Base Styles & Reset --- */
 * {
   margin: 0;
   padding: 0;
@@ -13,7 +12,6 @@ body {
   position: relative;
 }
 
-/* --- Subtle Scanlines Overlay --- */
 body::before {
   content: "";
   position: fixed;
@@ -31,7 +29,6 @@ body::before {
   opacity: 0.15;
 }
 
-/* --- Header / Navbar --- */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -41,7 +38,6 @@ body::before {
   border-bottom: 2px solid #2a2a35;
 }
 
-/* RGB Animated Text Effect for Header Logo */
 .rgb-text {
   font-size: 1rem;
   letter-spacing: -0.5px;
@@ -70,7 +66,6 @@ body::before {
   color: #00e5ff;
 }
 
-/* --- Hero Section --- */
 .hero {
   text-align: center;
   padding: 60px 20px;
@@ -91,7 +86,6 @@ body::before {
   line-height: 1.6;
 }
 
-/* --- Buttons --- */
 .btn {
   display: inline-block;
   padding: 12px 24px;
@@ -126,7 +120,6 @@ body::before {
   color: #000;
 }
 
-/* --- Scroll Fade-In --- */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -138,7 +131,6 @@ body::before {
   transform: translateY(0);
 }
 
-/* --- Game Grid Section --- */
 .container {
   padding: 40px 5%;
   position: relative;
@@ -159,7 +151,6 @@ body::before {
   gap: 25px;
 }
 
-/* --- Retro Game Card --- */
 .game-card {
   background: #141419;
   border: 2px solid #2a2a35;
@@ -226,7 +217,6 @@ body::before {
   font-size: 0.55rem;
 }
 
-/* --- Overlay Modals --- */
 .modal {
   display: none;
   position: fixed;
@@ -342,7 +332,6 @@ body::before {
   color: #000;
 }
 
-/* Custom About & Help Modal Layouts */
 .custom-modal-layout {
   display: flex;
   flex-direction: column;
@@ -384,6 +373,54 @@ body::before {
   color: #aaa;
   font-size: 0.65rem;
   line-height: 1.8;
+}
+
+.donate-modal-content {
+  max-width: 420px;
+  text-align: center;
+}
+
+.donate-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.donate-container h2 {
+  color: #ffcc00;
+  font-size: 1.1rem;
+}
+
+.donate-container p {
+  color: #aaa;
+  font-size: 0.6rem;
+  line-height: 1.5;
+}
+
+.qr-box {
+  border: 2px solid #00e5ff;
+  padding: 10px;
+  background: #0d0d12;
+  display: inline-block;
+  margin: 5px 0;
+}
+
+.qr-box img {
+  width: 180px;
+  height: 180px;
+  display: block;
+  object-fit: contain;
+}
+
+.upi-id {
+  font-size: 0.55rem;
+  color: #8a99ad;
+}
+
+.upi-id span {
+  color: #00e5ff;
+  user-select: all;
 }
 
 .contact-info {
