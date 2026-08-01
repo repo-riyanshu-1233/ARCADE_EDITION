@@ -15,7 +15,7 @@
 
   <!-- Navbar -->
   <header class="navbar">
-    <div class="logo">RETRO ARCADE</div>
+    <div class="logo rgb-text">RETRO ARCADE</div>
     <nav>
       <a href="javascript:void(0)" onclick="openModal('aboutModal')">ABOUT</a>
       <a href="javascript:void(0)" onclick="openModal('helpModal')">HELP</a>
@@ -34,48 +34,8 @@
   <!-- Game Collection Grid -->
   <main class="container" id="games">
     <h2 class="reveal">ARCADE GAMES</h2>
-    <div class="game-grid">
-
-      <!-- Game Card 1 -->
-      <div class="game-card reveal" onclick="showAbout('PIXEL PHYSICS', 'Action 8-bit physics simulation game where you solve challenging gravity puzzles.', 'https://via.placeholder.com/300x180/05050a/4facfe?text=PHYSICS+8BIT', 'https://example.com/your-game-1', 'ACTION')">
-        <div class="card-img">
-          <img src="https://via.placeholder.com/300x180/05050a/4facfe?text=PHYSICS+8BIT" alt="Game 1">
-        </div>
-        <div class="card-info">
-          <h3>PIXEL PHYSICS</h3>
-          <div class="card-meta">
-            <span class="tag">[ACTION]</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Game Card 2 -->
-      <div class="game-card reveal" onclick="showAbout('GALACTIC RUN', 'High-speed retro runner game set in space. Dodge obstacles and play!', 'https://via.placeholder.com/300x180/05050a/ffe600?text=SPACE+RUN', 'https://example.com/your-game-2', 'ARCADE')">
-        <div class="card-img">
-          <img src="https://via.placeholder.com/300x180/05050a/ffe600?text=SPACE+RUN" alt="Game 2">
-        </div>
-        <div class="card-info">
-          <h3>GALACTIC RUN</h3>
-          <div class="card-meta">
-            <span class="tag">[ARCADE]</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Game Card 3 -->
-      <div class="game-card reveal" onclick="showAbout('CYBER SHOOTER', 'Classic arcade space shooter with retro visuals and intense boss battles.', 'https://via.placeholder.com/300x180/05050a/ff00de?text=RETRO+SHOOT', 'https://example.com/your-game-3', 'SHOOTER')">
-        <div class="card-img">
-          <img src="https://via.placeholder.com/300x180/05050a/ff00de?text=RETRO+SHOOT" alt="Game 3">
-        </div>
-        <div class="card-info">
-          <h3>CYBER SHOOTER</h3>
-          <div class="card-meta">
-            <span class="tag">[SHOOTER]</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    <!-- Dynamic Cards will be rendered here from script.js -->
+    <div class="game-grid" id="gameGrid"></div>
   </main>
 
   <!-- Game Details Modal -->
