@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Press Start 2P', cursive;
-  cursor: crosshair;
 }
 
 body {
@@ -302,7 +301,7 @@ body::before {
   font-size: 0.5rem;
 }
 
-/* --- Overlay Modal (Preview / About Section) --- */
+/* --- Overlay Modals --- */
 .modal {
   display: none;
   position: fixed;
@@ -340,7 +339,7 @@ body::before {
   transform: scale(1);
 }
 
-/* Game Preview / About Section Layout */
+/* Game Preview Layout */
 .preview-layout {
   display: flex;
   flex-direction: column;
@@ -421,6 +420,74 @@ body::before {
 .close-btn:hover {
   background: #ff00de;
   color: #fff;
+}
+
+/* Custom About & Help Modal Layouts */
+.custom-modal-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+
+@media (min-width: 600px) {
+  .custom-modal-layout {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+}
+
+.profile-pic-container {
+  flex-shrink: 0;
+}
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border: 4px solid #ff00de;
+  object-fit: cover;
+  box-shadow: 0 0 10px #ff00de;
+}
+
+.custom-modal-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.custom-modal-details h2 {
+  color: #ffe600;
+  font-size: 1.2rem;
+  text-shadow: 2px 2px 0 #000;
+}
+
+.custom-modal-details p {
+  color: #4facfe;
+  font-size: 0.65rem;
+  line-height: 1.8;
+}
+
+.contact-info {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-info p {
+  color: #fff;
+  font-size: 0.6rem;
+}
+
+.contact-info a {
+  color: #00f2fe;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 5px #00f2fe;
 }
 
 @media (max-width: 600px) {
