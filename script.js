@@ -1,4 +1,3 @@
-
 const gamesList = [
   {
     id: 1,
@@ -28,12 +27,11 @@ const gamesList = [
 
 let currentActiveGameUrl = '';
 
-// --- Render Games Dynamically into Grid ---
 function renderGameGrid() {
   const gridContainer = document.getElementById('gameGrid');
   if (!gridContainer) return;
 
-  gridContainer.innerHTML = ''; // Clear existing
+  gridContainer.innerHTML = '';
 
   gamesList.forEach(game => {
     const cardHtml = `
@@ -55,7 +53,6 @@ function renderGameGrid() {
   initScrollObserver();
 }
 
-// --- Show Game Modal Details ---
 function showAbout(gameId) {
   const game = gamesList.find(g => g.id === gameId);
   if (!game) return;
@@ -70,7 +67,6 @@ function showAbout(gameId) {
   openModal('gameModal');
 }
 
-// --- Launch Active Game ---
 function launchGame() {
   if (currentActiveGameUrl) {
     window.open(currentActiveGameUrl, '_blank');
@@ -78,7 +74,6 @@ function launchGame() {
   }
 }
 
-// --- General Modal Controls ---
 function openModal(id) {
   const modal = document.getElementById(id);
   if (modal) {
@@ -95,7 +90,20 @@ function closeModal(id) {
   }
 }
 
-// --- Share Game Functionality ---
+function openDonateModal() {
+  closeModal('aboutModal');
+  setTimeout(() => {
+    openModal('donateModal');
+  }, 260);
+}
+
+function backToAbout() {
+  closeModal('donateModal');
+  setTimeout(() => {
+    openModal('aboutModal');
+  }, 260);
+}
+
 function shareGame() {
   if (navigator.share) {
     navigator.share({
@@ -109,7 +117,6 @@ function shareGame() {
   }
 }
 
-// --- Scroll Fade-In Observer ---
 function initScrollObserver() {
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -122,7 +129,6 @@ function initScrollObserver() {
   document.querySelectorAll('.reveal').forEach(el => { observer.observe(el); });
 }
 
-// Close modal on outer click & Escape key
 window.onclick = function(event) {
   if (event.target.classList.contains('modal')) {
     closeModal(event.target.id);
@@ -135,5 +141,4 @@ window.addEventListener('keydown', (e) => {
   }
 });
 
-// Initialize Grid on Page Load
 document.addEventListener('DOMContentLoaded', renderGameGrid);
