@@ -12,7 +12,7 @@ const gamesList = [
     title: "TIC TAC TOE",
     category: "STRATEGY",
     description: "TIC TAC TOE GAME KNOWN AS POPULAR GAME WORLDWIDE PLAYED BY STUDENT, CHILDREN AND ADULTS NOW IT'S AVAILABLE IN YOUR HAND. ENJOY!",
-    image: "Images/tictactoe.jpg",
+    image: "Images/tictactoe.png",
     gameUrl: "https://tictactoe-xx1u.onrender.com/"
   },
   {
