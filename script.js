@@ -9,11 +9,11 @@ const gamesList = [
   },
   {
     id: 2,
-    title: "TICK TACK TOE",
+    title: "TIC TAC TOE",
     category: "STRATEGY",
-    description: "TICK TACK TOE GAME KNOWN AS POPULAR GAME WORLDWIDE PLAYED BY STUDENT, CHILDREN AND ADULTS NOW IT'S AVAILABLE IN YOUR HAND. ENJOY!(Work in progress)",
-    image: "Images/comingsoon.jpg",
-    gameUrl: "null"
+    description: "TIC TAC TOE GAME KNOWN AS POPULAR GAME WORLDWIDE PLAYED BY STUDENT, CHILDREN AND ADULTS NOW IT'S AVAILABLE IN YOUR HAND. ENJOY!",
+    image: "Images/tictactoe.jpg",
+    gameUrl: "https://tictactoe-xx1u.onrender.com/"
   },
   {
     id: 3,
