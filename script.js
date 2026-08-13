@@ -17,11 +17,11 @@ const gamesList = [
   },
   {
     id: 3,
-    title: "COMINGSOON",
-    category: "N/A",
-    description: "N/A.",
-    image: "Images/comingsoon.jpg",
-    gameUrl: "null"
+    title: "LUDO EDITION",
+    category: "BOARD STRATEGY",
+    description: "LUDO EDITION IS A REPLICA GAME OF FAMOUS INDIAN GAME. (DEVLOPMENT IS ON GOING SO IF YOU FACE ANY ISSUE PLEASE LET US KNOW BY IN GAME CONTACT US SECTION).",
+    image: "Images/ludo.png",
+    gameUrl: "https://ludoedition.onrender.com"
   }
 ];
 
