@@ -22,7 +22,16 @@ const gamesList = [
     description: "LUDO EDITION IS A REPLICA GAME OF FAMOUS INDIAN GAME. (DEVLOPMENT IS ON GOING SO IF YOU FACE ANY ISSUE PLEASE LET US KNOW BY IN GAME CONTACT US SECTION).",
     image: "Images/ludo.png",
     gameUrl: "https://ludoedition.onrender.com"
+  },
+{
+    id: 4,
+    title: "N/A",
+    category: "N/A",
+    description: "N/A",
+    image: "Images/comingsoon.png",
+    gameUrl: "https://arcade-edition.onrender.com/"
   }
+
 ];
 
 let currentActiveGameUrl = '';
