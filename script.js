@@ -25,10 +25,10 @@ const gamesList = [
   },
 {
     id: 4,
-    title: "N/A",
-    category: "N/A",
-    description: "N/A",
-    image: "Images/comingsoon.jpg",
+    title: "COMING SOON",
+    category: "STRATEGY",
+    description: "Dots and Boxes is a strategic board game where players take turns drawing lines between dots to complete and capture squares. Completing a box awards a bonus turn, and the player with the most boxes at the end wins.(COMING SOON)",
+    image: "Images/Dotboxes.png",
     gameUrl: "https://arcade-edition.onrender.com/"
   }
 
