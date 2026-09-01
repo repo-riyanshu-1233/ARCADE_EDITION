@@ -28,7 +28,7 @@ const gamesList = [
     title: "N/A",
     category: "N/A",
     description: "N/A",
-    image: "Images/comingsoon.png",
+    image: "Images/comingsoon.jpg",
     gameUrl: "https://arcade-edition.onrender.com/"
   }
 
