@@ -30,6 +30,15 @@ const gamesList = [
     description: "(UNDER CONSTRUCTION) Dots and Boxes is a strategic board game where players take turns drawing lines between dots to complete and capture squares. Completing a box awards a bonus turn, and the player with the most boxes at the end wins",
     image: "Images/Dotboxes.png",
     gameUrl: "https://dotboxes.onrender.com/"
+  },
+{
+
+    id: 5,
+    title: "N/A",
+    category: "UPCOMING",
+    description: "N/A",
+    image: "Images/comingsoon.jpg",
+    gameUrl: "null"
   }
 
 ];
