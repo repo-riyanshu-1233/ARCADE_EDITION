@@ -36,7 +36,7 @@ const gamesList = [
     title: "BLIND SHOT",
     category: "STRATEGY",
     description: "(UNDER BUILD) JOIN THE CHAOS OF ULTIMATE BLIND SHOT GAME GUESS YOUR OPPONENT POSITION AND ELIMINATE THEM TO STAND TILL LAST ",
-    image: "Images/blindshot.png",
+    image: "Images/Blindshot.png",
     gameUrl: "https://blind-shoot.onrender.com"
   },
 {
