@@ -32,8 +32,16 @@ const gamesList = [
     gameUrl: "https://dotboxes.onrender.com/"
   },
 {
-
     id: 5,
+    title: "BLIND SHOT",
+    category: "STRATEGY",
+    description: "(UNDER BUILD) JOIN THE CHAOS OF ULTIMATE BLIND SHOT GAME GUESS YOUR OPPONENT POSITION AND ELIMINATE THEM TO STAND TILL LAST ",
+    image: "Images/blindshot.png",
+    gameUrl: "https://blind-shoot.onrender.com"
+  },
+{
+
+    id: 6,
     title: "N/A",
     category: "UPCOMING",
     description: "N/A",
